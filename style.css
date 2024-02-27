@@ -43,6 +43,10 @@
 }
 body{
     background-color: var(--Light-Grayish-Blue);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 .wrapper{
     max-width: 22rem;
@@ -60,8 +64,11 @@ body{
   border-radius: 8px;
 }
 .content{
-    padding: 2rem 1.7rem 3rem 1.7rem;
+    padding: 2rem 1.5rem 1rem 1.5rem;
     background-color: #fff;
+}
+.active{
+  padding: 2rem 1.7rem 3rem 1.7rem;
 }
 .content main{
   font-weight: 700;
@@ -76,9 +83,10 @@ body{
   margin-bottom: 1.3rem;
 }
 .profile-wrapper{
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
   gap: 1.3rem;
+  align-items: center;
 }
 .profile img{
   height: 2.5rem;
@@ -86,7 +94,7 @@ body{
   border-radius: 50%;
 }
 .share-active-state{
-  /* display: none; */
+  display: none;
   background-color: var(--very-dark-grayish-blue);
   position: absolute;
   padding: 1rem 2rem 1rem 1.5rem;
@@ -94,7 +102,7 @@ body{
   bottom: 0;
   left: 0;
   height: 3.5rem;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
 }
@@ -123,8 +131,8 @@ body{
 }
 .share-btn{
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 25px;
   border-radius: 50%;
   border: none;
   width: 2rem;
@@ -153,4 +161,25 @@ body{
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+@media screen and (min-width:700px) {
+  .wrapper{
+    display: flex;
+    max-width: 630px;
+  }
+  .img img{
+    max-width: 250px;
+    top: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: 240px;
+  }
+  .content{
+    padding: 1rem 2rem 0.5rem 2rem;
+    height: 240px;
+    border-radius: 0 0 8px 0;
+  }
+  .content main{
+    margin-bottom: 0.3rem;
+  }
 }
