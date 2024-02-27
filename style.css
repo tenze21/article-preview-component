@@ -51,6 +51,7 @@ body{
     overflow: hidden;
     /* background-color: #fff; */
     font-family: var(--font-family);
+    position: relative;
 }
 .img img{
   position: relative;
@@ -59,7 +60,7 @@ body{
   border-radius: 8px;
 }
 .content{
-    padding: 2rem 1.7rem 1rem 1.7rem;
+    padding: 2rem 1.7rem 3rem 1.7rem;
     background-color: #fff;
 }
 .content main{
@@ -72,12 +73,12 @@ body{
   font-size: 0.8125rem;
   color: var(--Desaturated-Dark-Blue);
   font-weight: 500;
+  margin-bottom: 1.3rem;
 }
 .profile-wrapper{
-  display: flex;
-  margin-top: 1.3rem;
+  /* display: flex; */
+  display: none;
   gap: 1.3rem;
-  position: relative;
 }
 .profile img{
   height: 2.5rem;
@@ -85,7 +86,40 @@ body{
   border-radius: 50%;
 }
 .share-active-state{
-  display: none;
+  /* display: none; */
+  background-color: var(--very-dark-grayish-blue);
+  position: absolute;
+  padding: 1rem 2rem 1rem 1.5rem;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.links > span{
+  color: var(--Grayish-Blue);
+  padding-right: 0.6rem;
+}
+.share-active-state button{
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: var(--Desaturated-Dark-Blue);
+  cursor: pointer;
+}
+.share-active-state .share-icon path{
+  fill: #fff;
+}
+.share-hide{
+  margin-left: 3rem;
 }
 .share-btn{
   position: absolute;
