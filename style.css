@@ -43,7 +43,8 @@
 }
 body{
     background-color: var(--Light-Grayish-Blue);
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -52,7 +53,6 @@ body{
     max-width: 22rem;
     margin-inline: auto;
     border-radius: 8px;
-    overflow: hidden;
     /* background-color: #fff; */
     font-family: var(--font-family);
     position: relative;
@@ -101,10 +101,14 @@ body{
   width: 100%;
   bottom: 0;
   left: 0;
-  height: 3.5rem;
-  /* display: flex; */
-  align-items: center;
-  justify-content: space-between;
+  height: 4rem;
+  border-radius: 0 0 8px 8px;
+}
+/* Show the share links */
+.show{
+   display: flex; 
+   align-items: center;
+   justify-content: space-between;
 }
 .links{
   display: flex;
@@ -114,14 +118,6 @@ body{
 .links > span{
   color: var(--Grayish-Blue);
   padding-right: 0.6rem;
-}
-.share-active-state button{
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  border: none;
-  background-color: var(--Desaturated-Dark-Blue);
-  cursor: pointer;
 }
 .share-active-state .share-icon path{
   fill: #fff;
@@ -137,13 +133,13 @@ body{
   border: none;
   width: 2rem;
   height: 2rem;
+  z-index: 10;
 }
-.share-btn:hover{
-  cursor: pointer;
+.btn-active{
   background-color: var(--Desaturated-Dark-Blue);
 }
 /* change color of SVG. use inline SVG */
-.share-btn:hover .share-icon path{
+.btn-active .share-icon path{
   fill: #fff;
 }
 .credentials p:first-child{
@@ -174,6 +170,12 @@ body{
     left: 50px;
     height: 240px;
   }
+  .share-btn:active .share-icon path{
+    fill: #fff;
+  }
+  .share-btn:active{
+    background-color: var(--Desaturated-Dark-Blue);
+  }
   .content{
     padding: 1rem 2rem 0.5rem 2rem;
     height: 240px;
@@ -181,5 +183,27 @@ body{
   }
   .content main{
     margin-bottom: 0.3rem;
+  }
+  .share-active-state{
+  /* display: none; */
+  background-color: var(--very-dark-grayish-blue);
+  position: absolute;
+  border-radius: 8px;
+  padding: 1rem 2rem 1rem 1.5rem;
+  max-width: 240px;
+  bottom: 80px;
+  left: 460px;
+  height: 3rem;
+  z-index: 10;
+  }
+  .share-active-state::after{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: var(--very-dark-grayish-blue);
+    position: absolute;
+    transform: rotate(45deg);
+    top: 41px;
+    right: 44%;
   }
 }
